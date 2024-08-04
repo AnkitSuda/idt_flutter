@@ -15,8 +15,13 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final goal = context.watch<MainCubit>().state.goal;
-    final score = (goal == Goal.muscleGain
+    return BlocBuilder<MainCubit, MainState>(
+      builder: (context, state) => _build(context, state),
+    );
+  }
+
+  Widget _build(BuildContext context, MainState state) {
+    final score = (state.goal == Goal.muscleGain
             ? product.scoreMuscleGain
             : product.scoreFatLoss) ??
         0;
@@ -46,7 +51,7 @@ class ProductDetailScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: ListView(
+        child: Column(
           children: [
             Padding(
               padding: padding32,
@@ -58,10 +63,8 @@ class ProductDetailScreen extends StatelessWidget {
                     children: [
                       SizedBox.square(
                         dimension: 100,
-                        child: Positioned.fill(
-                          child: CustomPaint(
-                            painter: ScannerBorderPainter(color: scoreColor),
-                          ),
+                        child: CustomPaint(
+                          painter: ScannerBorderPainter(color: scoreColor),
                         ),
                       ),
                       Text(
