@@ -105,10 +105,13 @@ class ProductDetailScreen extends StatelessWidget {
                           ),
                           color: Colors.white,
                         ),
-                        child: Image.asset(
-                          product.image!,
-                          width: 100,
-                          height: 100,
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: Image.asset(
+                            product.image!,
+                            width: 96,
+                            height: 96,
+                          ),
                         ),
                       ),
                       spaceW12,

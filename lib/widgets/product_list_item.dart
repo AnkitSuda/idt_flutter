@@ -32,8 +32,11 @@ class ProductListItem extends StatelessWidget {
                   ),
                   color: Colors.white,
                 ),
-                child: Image.asset(
-                  product.image!,
+                child: Padding(
+                  padding: const EdgeInsets.all(2),
+                  child: Image.asset(
+                    product.image!,
+                  ),
                 ),
               ),
             ),
