@@ -3,10 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:idt_flutter/data/demo_data.dart';
 import 'package:idt_flutter/main_cubit/main_cubit.dart';
 import 'package:idt_flutter/navigation/routes.dart';
 import 'package:idt_flutter/spaces.dart';
 import 'package:idt_flutter/widgets/goal_list_item.dart';
+import 'package:idt_flutter/widgets/product_list_item.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -35,7 +37,31 @@ class LandingScreen extends StatelessWidget {
               spaceH12,
               GoalListItem(
                 goal: state.goal,
-                onClick: null,
+                onClick: () {
+                  context.pushNamed(goalSelectorName);
+                },
+              ),
+              spaceH32,
+              Text(
+                AppLocalizations.of(context)!.demoProducts,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              spaceH12,
+              ...demoProducts.map(
+                (product) => Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 16,
+                  ),
+                  child: ProductListItem(
+                    product: product,
+                    onClick: () {
+                      context.pushNamed(
+                        productDetailsName,
+                        queryParameters: {paramId: product.id},
+                      );
+                    },
+                  ),
+                ),
               ),
             ],
           ),

@@ -5,5 +5,11 @@
   "yourGoal": "Your Goal",
   "scan": "Scan",
   "demo": "Demo",
-  "showDemoProducts": "Show Demo Products"
+  "showDemoProducts": "Show Demo Products",
+  "demoProducts": "Demo Products",
+  "healthScore": "Health Score",
+  "badScoreDescription": "This food has a bad health score. It is not recommended for you.",
+  "goodScoreDescription": "This food has a good health score. It is recommended for you.",
+  "neutralScoreDescription": "This food has a neutral health score. It is recommended for you.",
+  "veryGoodScoreDescription": "This food has a very good health score. It is recommended for you."
 }

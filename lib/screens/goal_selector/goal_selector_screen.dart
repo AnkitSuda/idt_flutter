@@ -25,12 +25,17 @@ class GoalSelectorScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               ...Goal.values.map(
-                (goal) => GoalListItem(
-                  goal: goal,
-                  onClick: () {
-                    context.read<MainCubit>().setGoal(goal);
-                    context.push(landingPath);
-                  },
+                (goal) => Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 16,
+                  ),
+                  child: GoalListItem(
+                    goal: goal,
+                    onClick: () {
+                      context.read<MainCubit>().setGoal(goal);
+                      context.push(landingPath);
+                    },
+                  ),
                 ),
               ),
             ],

@@ -14,6 +14,7 @@ class GoalListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.zero,
       clipBehavior: Clip.antiAlias,
       child: ListTile(
         title: Text(

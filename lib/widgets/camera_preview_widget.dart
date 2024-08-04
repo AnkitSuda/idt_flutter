@@ -14,7 +14,11 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
 
   void _setup() async {
     _cameras = await availableCameras();
-    controller = CameraController(_cameras![0], ResolutionPreset.max);
+    controller = CameraController(
+      _cameras![0],
+      ResolutionPreset.max,
+      enableAudio: false,
+    );
     controller?.initialize().then((_) {
       if (!mounted) {
         return;
@@ -52,8 +56,6 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
       return Container();
     }
 
-    return MaterialApp(
-      home: CameraPreview(controller!),
-    );
+    return CameraPreview(controller!);
   }
 }

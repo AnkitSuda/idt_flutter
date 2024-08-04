@@ -1,9 +1,12 @@
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
+import "package:idt_flutter/data/demo_data.dart";
 import "package:idt_flutter/screens/goal_selector/goal_selector_screen.dart";
 import "package:idt_flutter/screens/landing/landing_screen.dart";
 import "package:go_router/go_router.dart";
 import "package:idt_flutter/screens/scan/scan_screen.dart";
+
+import "../screens/product_detail/product_detail_screen.dart";
 
 const paramId = "id";
 const paramItemId = "itemId";
@@ -26,6 +29,9 @@ const goalSelectorPath = "/$goalSelectorName";
 
 const scanName = "scan";
 const scanPath = "/$scanName";
+
+const productDetailsName = "product-details";
+const productDetailsPath = "/$productDetailsName";
 
 GoRouter goRouter() {
   return GoRouter(
@@ -50,6 +56,17 @@ GoRouter goRouter() {
         name: scanName,
         path: scanPath,
         builder: (context, state) => const ScanScreen(),
+      ),
+      GoRoute(
+        name: productDetailsName,
+        path: productDetailsPath,
+        builder: (context, state) {
+          final id = state.uri.queryParameters[paramId];
+
+          return ProductDetailScreen(
+            product: demoProducts.firstWhere((product) => product.id == id),
+          );
+        },
       ),
     ],
   );
