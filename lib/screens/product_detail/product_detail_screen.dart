@@ -51,6 +51,7 @@ class ProductDetailScreen extends StatelessWidget {
             Padding(
               padding: padding32,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Stack(
                     alignment: Alignment.center,
