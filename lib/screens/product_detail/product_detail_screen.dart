@@ -59,9 +59,7 @@ class ProductDetailScreen extends StatelessWidget {
                         dimension: 100,
                         child: Positioned.fill(
                           child: CustomPaint(
-                            painter: ScannerBorderPainter(
-                              color: scoreColor
-                            ),
+                            painter: ScannerBorderPainter(color: scoreColor),
                           ),
                         ),
                       ),
@@ -80,8 +78,8 @@ class ProductDetailScreen extends StatelessWidget {
                     AppLocalizations.of(context)!.healthScore,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      color: Theme.of(context).primaryColor,
-                    ),
+                          color: Theme.of(context).primaryColor,
+                        ),
                   ),
                   spaceH8,
                   Text(
@@ -100,10 +98,18 @@ class ProductDetailScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     if (product.image != null) ...[
-                      Image.asset(
-                        product.image!,
-                        width: 100,
-                        height: 100,
+                      DecoratedBox(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: Image.asset(
+                          product.image!,
+                          width: 100,
+                          height: 100,
+                        ),
                       ),
                       spaceW12,
                     ],

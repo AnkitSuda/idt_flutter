@@ -20,5 +20,15 @@ const demoProducts = [
     scoreFatLoss: 30,
     scoreMuscleGain: 70,
     image: "assets/white_bread.webp",
+  ),
+  Product(
+    id: "test3",
+    name: "Amul Salted Butter",
+    description:
+    "Made from the freshest of cream, the Amul butter has lovely taste which is delicate and slightly salty. This finely processed butter is natural, pure and tastes best overwith toasts and sandwiches. Has a natural and pure formulation that gives it a great taste. Made from fresh cream that has a wonderful flavour. Spread it over toast or cook your curries in it for a heavenly taste.",
+    // Score out of 100
+    scoreFatLoss: 20,
+    scoreMuscleGain: 75,
+    image: "assets/amul.webp",
   )
 ];

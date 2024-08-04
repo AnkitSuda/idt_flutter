@@ -25,8 +25,16 @@ class ProductListItem extends StatelessWidget {
           children: [
             SizedBox.square(
               dimension: 32,
-              child: Image.asset(
-                product.image!,
+              child: DecoratedBox(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(2),
+                  ),
+                  color: Colors.white,
+                ),
+                child: Image.asset(
+                  product.image!,
+                ),
               ),
             ),
             spaceW8,
