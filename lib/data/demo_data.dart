@@ -18,7 +18,7 @@ const demoProducts = [
         "Soft white sandwich bread Wholesome and delicious. Made using the finest quality ingredients. Perfect to treat your palate to delicious taste. Packed with the goodness of Vitamin B",
     // Score out of 100
     scoreFatLoss: 30,
-    scoreMuscleGain: 50,
+    scoreMuscleGain: 70,
     image: "assets/white_bread.webp",
   )
 ];

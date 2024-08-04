@@ -44,6 +44,12 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('en'), // English
       ],
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurpleAccent,
+
+        ),
+      ),
     );
   }
 }
